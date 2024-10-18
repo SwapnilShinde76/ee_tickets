@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrovibe'24 Tickets</title>
+    <style>
+        /* Gold and Black Theme with Electrovibe Styling */
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+    
+        h1 {
+            color: #ffea00;
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 10px 0;
+        }
+    
+        h2 {
+            color: #e5e5e5;
+            font-size: 35px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+    
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            border: 2px solid #ffea00;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #ffea00;
+            font-size: 18px;
+        }
+    
+        button {
+            padding: 15px 30px;
+            background-color: #ffea00;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+    
+        button:hover {
+            background-color: #ffd700;
+            color: #1a1a1a;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        li {
+            margin: 15px 0;
+        }
+    
+        a {
+            color: #ffea00;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 22px;
+        }
+    
+        a:hover {
+            color: #ffd700;
+        }
+    
+        /* Decorations and background elements */
+        .highlight {
+            background-color: #ffea00;
+            color: #1a1a1a;
+            font-size: 50px;
+            padding: 5px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    
+        .tagline {
+            color: #ffea00;
+            font-size: 25px;
+            margin-top: 10px;
+            letter-spacing: 3px;
+        }
+    
+        .date-box {
+            border: 2px solid #ffea00;
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+    
+        .circle {
+            background-color: #ffea00;
+            color: #1a1a1a;
+            font-size: 80px;
+            padding: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 30px auto;
+        }
+    
+        /* Arrow decorations */
+        .arrows {
+            margin-top: 20px;
+            color: #ffea00;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2>SY Electrical Presents,</h2>
+    <h1>Electrovibe'24</h1>
+
+    <input type="text" id="search" placeholder="Enter Your Mobile Number here">
+    <button onclick="searchTicket()">Search</button>
+
+    <ul id="ticketList"></ul>
+
+    <script>
+        const participants = [
+        
+    // First 15 with tickets/tickets1
+    { name: '7028150626', ticketUrl: 'tickets1/7028150626.pdf' },
+    { name: '7030388352', ticketUrl: 'tickets1/7030388352.pdf' },
+    { name: '7350939991', ticketUrl: 'tickets1/7350939991.pdf' },
+    { name: '7378466834', ticketUrl: 'tickets1/7378466834.pdf' },
+    { name: '7385896957', ticketUrl: 'tickets1/7385896957.pdf' },
+    { name: '7498221395', ticketUrl: 'tickets1/7498221395.pdf' },
+    { name: '7498552735', ticketUrl: 'tickets1/7498552735.pdf' },
+    { name: '7499113438', ticketUrl: 'tickets1/7499113438.pdf' },
+    { name: '7507572245', ticketUrl: 'tickets1/7507572245.pdf' },
+    { name: '7620664412', ticketUrl: 'tickets1/7620664412.pdf' },
+    { name: '7719092006', ticketUrl: 'tickets1/7719092006.pdf' },
+    { name: '7756095435', ticketUrl: 'tickets1/7756095435.pdf' },
+    { name: '7796691760', ticketUrl: 'tickets1/7796691760.pdf' },
+    { name: '7820912014', ticketUrl: 'tickets1/7820912014.pdf' },
+    { name: '7972994390', ticketUrl: 'tickets1/7972994390.pdf' },
+
+    // Next 15 with tickets/tickets2
+    { name: '8010700718', ticketUrl: 'tickets2/8010700718.pdf' },
+    { name: '8010838676', ticketUrl: 'tickets2/8010838676.pdf' },
+    { name: '8080983055', ticketUrl: 'tickets2/8080983055.pdf' },
+    { name: '8208822810', ticketUrl: 'tickets2/8208822810.pdf' },
+    { name: '8329009936', ticketUrl: 'tickets2/8329009936.pdf' },
+    { name: '8668518152', ticketUrl: 'tickets2/8668518152.pdf' },
+    { name: '8668612538', ticketUrl: 'tickets2/8668612538.pdf' },
+    { name: '8767012729', ticketUrl: 'tickets2/8767012729.pdf' },
+    { name: '8767544312', ticketUrl: 'tickets2/8767544312.pdf' },
+    { name: '8767555671', ticketUrl: 'tickets2/8767555671.pdf' },
+    { name: '9022097259', ticketUrl: 'tickets2/9022097259.pdf' },
+    { name: '9309138564', ticketUrl: 'tickets2/9309138564.pdf' },
+    { name: '9309385630', ticketUrl: 'tickets2/9309385630.pdf' },
+    { name: '9309485040', ticketUrl: 'tickets2/9309485040.pdf' },
+    { name: '9322633035', ticketUrl: 'tickets2/9322633035.pdf' },
+
+    // Next 16 with tickets/tickets3
+    { name: '9356052079', ticketUrl: 'tickets3/9356052079.pdf' },
+    { name: '9359712863', ticketUrl: 'tickets3/9359712863.pdf' },
+    { name: '9370697170', ticketUrl: 'tickets3/9370697170.pdf' },
+    { name: '9405480061', ticketUrl: 'tickets3/9405480061.pdf' },
+    { name: '9421901713', ticketUrl: 'ickets3/9421901713.pdf' },
+    { name: '9423228376', ticketUrl: 'ickets3/9423228376.pdf' },
+    { name: '9529500767', ticketUrl: 'ickets3/9529500767.pdf' },
+    { name: '9561247232', ticketUrl: 'tickets3/9561247232.pdf' },
+    { name: '9579014378', ticketUrl: 'tickets3/9579014378.pdf' },
+    { name: '9579432339', ticketUrl: 'tickets3/9579432339.pdf' },
+    { name: '9579847975', ticketUrl: 'tickets3/9579847975.pdf' },
+    { name: '9604302507', ticketUrl: 'tickets3/9604302507.pdf' },
+    { name: '9657867533', ticketUrl: 'tickets3/9657867533.pdf' },
+    { name: '9699597586', ticketUrl: 'tickets3/9699597586.pdf' },
+    { name: '9699735123', ticketUrl: 'tickets3/9699735123.pdf' },
+   
+
+    // Last 6 with tickets/tickets4
+    { name: '9766524853', ticketUrl: 'tickets4/9766524853.pdf' },
+    { name: '9766915910', ticketUrl: 'tickets4/9766915910.pdf' },
+    { name: '9890421724', ticketUrl: 'tickets4/9890421724.pdf' },
+    { name: '9960619312', ticketUrl: 'tickets4/9960619312.pdf' },
+    { name: '9978493050', ticketUrl: 'tickets4/9978493050.pdf' },
+    { name: '9699792056', ticketUrl: 'tickets4/9699792056.pdf' }
+];
+
+    
+
+        function searchTicket() {
+            const searchQuery = document.getElementById('search').value.toLowerCase().trim();
+            const resultList = document.getElementById('ticketList');
+            resultList.innerHTML = ''; // Clear previous results
+
+            // Check if search input is empty
+            if (searchQuery === "") {
+                resultList.innerHTML = '<li>Please enter a name to search.</li>';
+                return;
+            }
+
+            const filteredParticipants = participants.filter(participant =>
+                participant.name.toLowerCase().includes(searchQuery)
+            );
+
+            if (filteredParticipants.length === 0) {
+                resultList.innerHTML = '<li>No results found</li>';
+            } else {
+                filteredParticipants.forEach(participant => {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = participant.ticketUrl;
+                    link.textContent = `${participant.name}'s Ticket`;
+                    listItem.appendChild(link);
+                    resultList.appendChild(listItem);
+                });
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy; All rights reserved at SY EE </p>
+        <p><b><h3>For any issue Contact: Srujal:9405026091</h3></b></p>
+        <p> By Swapnil Shinde</p>
+    </footer>
+</body>
+</html>
